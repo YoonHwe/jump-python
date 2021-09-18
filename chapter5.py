@@ -47,3 +47,42 @@ print(list(filter(lambda x: x > 0, [1, -2, 3, -5, 8, -3])))
 #'0xea'
 # 이번에는 반대로 16진수 문자열 0xea를 10진수로 변경해 보자.
 int('0xea', 16)
+
+#6 map과 lambda를 사용하여 [1, 2, 3, 4] 리스트의 각 요솟값에 3이 곱해진 리스트 [3, 6, 9, 12]를 만들어 보자
+list(map(lambda x:x*3, [1,2,3,4]))
+
+#7 다음 리스트의 최댓값과 최솟값의 합을 구해 보자.
+list = [-8, 2, 7, 5, -3, 5, 0, 1]
+max = max(list)
+min = min(list)
+print(max+min)
+
+#8 5.666666666666667을 소수점 4자리까지만 반올림하여 표시해 보자.
+round(5.666666666666667, 4)
+
+#9 다음처럼 sys모듈의 argv를 사용하여 명령 행 입력값 모두를 차례로 더해 준다.
+import sys
+numbers = sys.argv[1:] # 파일 이름을 제외한 명령 행의 모든 입력
+result = 0
+for number in numbers:
+    result += int(number)
+print(result)
+
+#10 os 모듈을 사용하여 다음과 같이 동작하도록 코드를 작성해 보자 1.C:\doit 디렉터리로 이동한다. / 2. dir 명령을 실행하고 그 결과를 변수에 담는다. / 3. dir 명령의 결과를 출력한다.
+
+#11 glob 모듈을 사용하여 C:\doit 디렉터리의 파일 중 확장자가 .py인 파일만 출력하는 프로그램을 작성해 보자.
+import glob
+glob.glob("c:/doit/*.py")
+
+#12 time 모듈을 사용하여 현재 날짜와 시간을 다음과 같은 형식으로 출력해 보자.
+import time 
+time.strftime("%Y/%m/%d %H:%M:%S") # %Y:년, %m:월, %d:일, %H:시, %M:분, %S:초
+
+#13 random 모듈을 사용하여 로또 번호(1~45 사이의 숫자 6개)를 생성해 보자.
+import random
+result = []
+while len(result) < 6:
+    num = random.randint(1, 45)   # 1부터 45까지의 난수 발생
+    if num not in result:
+        result.append(num)
+print(result)
